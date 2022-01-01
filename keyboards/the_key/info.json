@@ -1,0 +1,16 @@
+{
+    "keyboard_name": "3 KEY",
+    "url": "",
+    "maintainer": "qmk",
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                { "label": "K00 (D4,D2)", "x": 0, "y": 0 },
+                { "label": "K01 (D4,D1)", "x": 1, "y": 0 },
+                { "label": "K02 (D4,D0)", "x": 2, "y": 0 }
+            ]
+        }
+    }
+    ,"meta": "https://noroadsleft.github.io/kbf_qmk_converter/"
+}
+
