@@ -15,11 +15,21 @@
 #define SFT_ENT     RSFT_T(KC_ENT)
 #define SFT_ESC     RSFT_T(KC_ESC)
 
+enum {
+	TD_ESC_TAB,
+	TD_Q_TAB,
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+	[TD_ESC_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_TAB),
+	[TD_Q_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_TAB),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT_ortho_3x10(
-    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    FN5_P,
-    CTL_A,   KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_GESC,
+    TD(TD_Q_TAB),    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    FN5_P,
+    CTL_A,   KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    TD(TD_ESC_TAB),
     SFT_Z,   ALT_X,   FN3_C,   FN4_V,   FN2_BSPC,FN1_SPC, CTL_B,   ALT_N,   GUI_M,   SFT_ENT
   ),
 
@@ -36,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_ortho_3x10(
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
-    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  S(KC_NUHS),S(KC_NUBS), _______, KC_SLSH
+    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  S(KC_NUHS),S(KC_NUBS),KC_DOT,KC_SLSH
   ),
 
   [3] = LAYOUT_ortho_3x10(
@@ -46,13 +56,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [4] = LAYOUT_ortho_3x10(
-    _______, _______, _______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
+    KC_GRV,  _______, _______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
     KC_TAB,  _______, _______, _______, _______, KC_LABK, KC_RABK, KC_QUES, KC_COLN, KC_DQUO,
     _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
   [5] = LAYOUT_ortho_3x10(
-    KC_CALC, KC_WHOM, KC_MAIL, KC_MYCM, _______, _______, _______, _______, _______, KC_PSCR,
+    KC_CALC, KC_WHOM, KC_MAIL, KC_MYCM, _______, _______, _______, _______, KC_PSCR, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, BL_DEC,  BL_INC,
     _______, _______, _______, _______, RESET,   _______, _______, _______, _______, _______
   )
