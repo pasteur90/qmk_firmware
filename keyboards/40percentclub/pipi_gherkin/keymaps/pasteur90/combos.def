@@ -1,0 +1,6 @@
+COMB(dfClick, KC_BTN1, KC_D, KC_F)
+COMB(fgClick, KC_BTN2, KC_F, KC_G)
+COMB(sdClick, KC_BTN3, KC_S, KC_D)
+
+// ploopy scroll mode
+SUBS(erClick, SS_TAP(X_NLCK)SS_DELAY(20)SS_TAP(X_NLCK), KC_E, KC_R)

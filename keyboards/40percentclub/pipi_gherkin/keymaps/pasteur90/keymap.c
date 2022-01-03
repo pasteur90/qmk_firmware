@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "g/keymap_combo.h"
 
 #define FN1_SPC     LT(1, KC_SPC)
 #define FN2_BSPC    LT(2, KC_BSPC)
@@ -29,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT_ortho_3x10(
     TD(TD_Q_TAB),    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    FN5_P,
-    CTL_A,   KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    TD(TD_ESC_TAB),
+    CTL_A,   KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_GESC,
     SFT_Z,   ALT_X,   FN3_C,   FN4_V,   FN2_BSPC,FN1_SPC, CTL_B,   ALT_N,   GUI_M,   SFT_ENT
   ),
 
