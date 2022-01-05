@@ -5,33 +5,40 @@
 #define FN2_BSPC    LT(2, KC_BSPC)
 #define FN3_C       LT(3, KC_C)
 #define FN4_V       LT(4, KC_V)
-#define FN5_P       LT(5, KC_P)
-#define CTL_B       RCTL_T(KC_B)
-#define CTL_A       LCTL_T(KC_A)
-#define SFT_Z       LSFT_T(KC_Z)
-#define ALT_X       ALT_T(KC_X)
-#define ALT_N       ALGR_T(KC_N)
-#define CTL_M       RCTL_T(KC_M)
-#define GUI_M       LGUI_T(KC_M)
+#define FN5_Z       LT(5, KC_Z)
 #define SFT_ENT     RSFT_T(KC_ENT)
 #define SFT_ESC     RSFT_T(KC_ESC)
+
+// Left-hand home row mods
+#define HOME_A LGUI_T(KC_A)
+#define HOME_S LALT_T(KC_S)
+#define HOME_D LSFT_T(KC_D)
+#define HOME_F LCTL_T(KC_F)
+
+// Right-hand home row mods
+#define HOME_J RCTL_T(KC_J)
+#define HOME_K RSFT_T(KC_K)
+#define HOME_L LALT_T(KC_L)
+#define HOME_SCLN RGUI_T(KC_SCLN)
 
 enum {
 	TD_ESC_TAB,
 	TD_Q_TAB,
+	TD_P_ESC,
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_ESC_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_TAB),
 	[TD_Q_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_TAB),
+	[TD_P_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_P, KC_ESC),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT_ortho_3x10(
-    TD(TD_Q_TAB),    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    FN5_P,
-    CTL_A,   KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_GESC,
-    SFT_Z,   ALT_X,   FN3_C,   FN4_V,   FN2_BSPC,FN1_SPC, CTL_B,   ALT_N,   GUI_M,   SFT_ENT
+    TD(TD_Q_TAB),    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O, TD(TD_P_ESC),
+    HOME_A,  HOME_S, HOME_D,  HOME_F,  KC_G,    KC_H,    HOME_J,  HOME_K,  HOME_L,  HOME_SCLN,
+    FN5_Z,   KC_X,    FN3_C,   FN4_V,   FN2_BSPC,FN1_SPC, KC_B,    KC_N,    KC_M,    KC_ENT
   ),
 
   /* RAISE */
@@ -46,8 +53,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_ortho_3x10(
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
-    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
-    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  S(KC_NUHS),S(KC_NUBS),KC_DOT,KC_SLSH
+    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
+    _______, _______, _______, _______, _______, _______,S(KC_NUHS),S(KC_NUBS),KC_DOT,KC_SLSH
   ),
 
   [3] = LAYOUT_ortho_3x10(
@@ -57,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [4] = LAYOUT_ortho_3x10(
-    KC_GRV,  _______, _______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
-    KC_TAB,  _______, _______, _______, _______, KC_LABK, KC_RABK, KC_QUES, KC_COLN, KC_DQUO,
+    S(KC_GRV),_______,_______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
+    S(KC_TAB),_______,_______, _______, _______, KC_LABK, KC_RABK, KC_QUES, KC_COLN, KC_DQUO,
     _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
