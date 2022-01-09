@@ -20,6 +20,7 @@
 #define HOME_K RSFT_T(KC_K)
 #define HOME_L LALT_T(KC_L)
 #define HOME_SCLN RGUI_T(KC_SCLN)
+#define HOME_ESC RGUI_T(KC_ESC)
 
 enum {
 	TD_ESC_TAB,
@@ -36,8 +37,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT_ortho_3x10(
-    TD(TD_Q_TAB),    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O, TD(TD_P_ESC),
-    HOME_A,  HOME_S, HOME_D,  HOME_F,  KC_G,    KC_H,    HOME_J,  HOME_K,  HOME_L,  HOME_SCLN,
+    TD(TD_Q_TAB),    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,  KC_P,
+    HOME_A,  HOME_S, HOME_D,  HOME_F,  KC_G,    KC_H,    HOME_J,  HOME_K,  HOME_L,  HOME_ESC,
     FN5_Z,   KC_X,    FN3_C,   FN4_V,   FN2_BSPC,FN1_SPC, KC_B,    KC_N,    KC_M,    KC_ENT
   ),
 
