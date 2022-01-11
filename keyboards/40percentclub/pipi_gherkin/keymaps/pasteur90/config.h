@@ -3,4 +3,4 @@
 //#define TAPPING_FORCE_HOLD
 #define RETRO_TAPPING
 #define COMBO_VARIABLE_LEN
-#define COMBO_TERM 5
+#define COMBO_TERM 50
