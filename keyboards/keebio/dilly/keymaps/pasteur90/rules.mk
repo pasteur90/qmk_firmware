@@ -1,2 +1,7 @@
+VPATH += keyboards/gboards/
+COMBO_ENABLE=yes
+TAP_DANCE_ENABLE = yes
+RGBLIGHT_ENABLE = no
 BOOTLOADER = atmel-dfu
+MOUSEKEY_ENABLE = yes
 RGBLIGHT_ENABLE = yes
