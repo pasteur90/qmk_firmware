@@ -1,1 +1,9 @@
 #pragma once
+
+#define TAPPING_TERM 175
+#define IGNORE_MOD_TAP_INTERRUPT
+//#define TAPPING_FORCE_HOLD
+#define RETRO_TAPPING
+#define COMBO_VARIABLE_LEN
+#define COMBO_TERM 40
+
